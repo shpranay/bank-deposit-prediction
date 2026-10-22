@@ -16,7 +16,7 @@ def load_spark_and_models():
         .config("spark.ui.enabled", "false")
         .getOrCreate()
     )
-    root = "models"
+    root = "."
     preprocessing = PipelineModel.load(f"{root}/preprocessing_model")
     lr_model = LogisticRegressionModel.load(f"{root}/logistic_regression_model")
     dt_model = DecisionTreeClassificationModel.load(f"{root}/decision_tree_model")
